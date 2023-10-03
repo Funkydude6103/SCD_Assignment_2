@@ -23,30 +23,47 @@ public class GenericStack<T>
         if(top==null)
         {
             top=new Node(item);
-            size++;
         }
         else
         {
             top.next=new Node(item);
             top.next.prev=top;
             top=top.next;
-            size++;
         }
+        size++;
     }
     public T pop()
     {
-        if(top!=null)
-        {
-            T temp= top.data;
-            top=top.prev;
-            size--;
-            return temp;
+        try {
+            if (top != null) {
+                T temp = top.data;
+                if (top.prev != null) {
+                    top = top.prev;
+                    top.next = null;
+                } else {
+                    top = null;
+                }
+                size--;
+                return temp;
+            }
+            else
+            {
+                throw new Exception("Stack is Empty");
+            }
         }
-        else
+        catch(Exception e)
         {
-            System.out.println("Stack is Empty");
+            System.out.println(e.getMessage());
             return null;
         }
+    }
+    public int size()
+    {
+        return size-1;
+    }
+    Boolean isEmpty()
+    {
+        return (size-1)==0;
     }
 
 }
