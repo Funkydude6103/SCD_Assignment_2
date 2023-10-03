@@ -5,10 +5,6 @@ import java.util.Scanner;
 
 public class Question1
 {
-    public void test()
-    {
-
-    }
     public static void main(String[] args)
     {
         GenericStack<Integer> genericStack=new GenericStack<>();
@@ -47,10 +43,9 @@ public class Question1
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         for(int i=0;i<size;i++)
         {
-            String element= null;
             try
             {
-                element = reader.readLine();
+                String element = reader.readLine();
                 stringGenericStack.push(element);
             }
             catch (IOException e)
@@ -58,8 +53,8 @@ public class Question1
                 throw new RuntimeException(e);
             }
         }
-        System.out.println("Popped: "+stringGenericStack.pop());
-        System.out.println("Popped: "+stringGenericStack.pop());
+        System.out.println("String Popped: "+stringGenericStack.pop());
+        System.out.println("String Popped: "+stringGenericStack.pop());
         System.out.println("Size: "+stringGenericStack.size());
 
         if(stringGenericStack.isEmpty())
