@@ -12,12 +12,12 @@ class Node
 
 class Mapping
 {
-    int [] ascii;
     Node [] nodes;
+    int [] ascii;
     public Mapping()
     {
-        ascii= new int[128];
         nodes=new Node[128];
+        ascii=new int[128];
         for (int i=0;i<128;i++)
         {
             ascii[i]=0;
@@ -31,7 +31,7 @@ class Mapping
     }
     boolean containsKey(char c)
     {
-        return ascii[c] != 0;
+        return ascii[c] == 1;
     }
     Node get(char c)
     {

@@ -21,6 +21,7 @@ public class Question2
         stream1.add('a');
         stream1.add('b');
 
+
         System.out.println("Stream: ['a', 'b', 'a', 'b']");
         System.out.println(stream1.getFirstNonRepeating());
 
